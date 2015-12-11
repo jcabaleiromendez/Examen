@@ -22,6 +22,7 @@ public class ItemDetailActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+       //no funciona la R
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.detail_toolbar);
