@@ -66,11 +66,12 @@ public class ItemListActivity extends AppCompatActivity
         if (requestCode == 1) {
             //Codigo del intent
             if (resultCode == RESULT_OK) {
-                //Resultado de la operacion
+
                 String result = data.getStringExtra("resultado");
+                //creamos la toast
                 Toast.makeText(ItemListActivity.this, result,
                         Toast.LENGTH_SHORT).show();
-                //Creamos un Toast con la informacion enviada en el intent
+
             }
         }
     }
@@ -81,10 +82,10 @@ public class ItemListActivity extends AppCompatActivity
      */
     @Override
     public void onItemSelected(String id) {
-        //Recogemos del xml config el valor del item dual_pane. Para Land es true y para los demas false
+
         Boolean bool = getResources().getBoolean(R.bool.dual_pane);
         if (bool) {
-            //Toast que se ejecutara cuando esta tumbado
+
             Toast.makeText(ItemListActivity.this, "Tumbado",
                     Toast.LENGTH_SHORT).show();
         }
