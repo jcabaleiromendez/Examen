@@ -61,23 +61,24 @@ public class ItemDetailFragment extends Fragment {
                              Bundle savedInstanceState) {
         final View rootView = inflater.inflate(R.layout.fragment_item_detail, container, false);
 
-        Button button = (Button) rootView.findViewById(R.id.button);//Recogemos el boton del fragment
-        button.setOnClickListener(new View.OnClickListener() {//Enlazamos el onClickListener
+        Button button = (Button) rootView.findViewById(R.id.button);
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //damos la accion al boton
+                //codigo para el funcionamiento del boton.
                 ItemListFragment frag = (ItemListFragment) getFragmentManager().findFragmentById(android.R.id.item_list);//Recogemos el fragment de la lista
-                if (frag == null || !frag.isInLayout()) {//Si el fragment NO esta cargado en pantalla
-                    Intent intentResultado = new Intent();//Declaramos el intent
-                    intentResultado.putExtra("resultado", "Activity Cerrada");//Informacion del intent
-                    getActivity().setResult(Activity.RESULT_OK, intentResultado);//Cargamos el resultado
+                if (frag == null || !frag.isInLayout()) {
+                    Intent intentResultado = new Intent();
+                    intentResultado.putExtra("resultado", "Activity Cerrada");
+
+                    getActivity().setResult(Activity.RESULT_OK, intentResultado);
                     getActivity().finish();//Cerramos la activity
 
-                } else {//en caso contrario
+                } else {
                     ((TextView) rootView.findViewById(R.id.item_detail)).setText("");//ponemos el texto del frag item_detail en blanco
                 }
             }
-        });//Fin del onClick
+        });
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
             ((TextView) rootView.findViewById(R.id.item_detail)).setText(mItem.details);
